@@ -1,0 +1,39 @@
+﻿@model Usuario
+@{
+    ViewData["Title"] = "Vehiculo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-header">
+    @ViewBag.Accion
+</div>
+<div class="card-body">
+    <form asp-action="GuardarCambiosU" asp-controller="Home" method="post">
+        <input asp-for="IdUsuario" type="hidden" />
+        <div class="mb-2">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Nombre" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Apellido</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Apellido" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Telefono</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Telefono" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Documento</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Documento" />
+        </div>
+        <div class="mb-2">
+            <label class="form-label">Clave</label>
+            <input type="text" class="form-control form-control-sm" asp-for="Clave" />
+        </div>
+        <button type="submit" class="btn btn-success btn-sm">Guardar Cambios</button>
+        <a asp-action="Index" asp-controller="Home" class="btn btn-warning btn-sm">Volver a la lista</a>
+
+    </form>
+
+</div>
+

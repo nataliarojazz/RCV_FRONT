@@ -1,0 +1,77 @@
+﻿@model RCV_FRONT.Models.Usuario;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registrarse</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .center-image {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container mt-3 pt-3">
+        <img src="https://plataforma.ucundinamarca.edu.co/aplicaciones/CamposdeAprendizaje/assets/img/logo-udec.svg" alt="Logo Udec" width="300" height="200" class="center-image">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-4 col-md-6">
+
+                <div class="card">
+                    <div class="card-header">
+                       Registrate
+                    </div>
+                    <div class="card-body">
+
+                        <form asp-action="GuardarU" asp-controller="Inicio" method="post">
+                            <input asp-for="IdUsuario" type="hidden" />
+
+                            <div class="mb-2">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Nombre" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Apellido</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Apellido" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Telefono</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Telefono" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Documento</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Documento" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Contraseña</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Clave" />
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-sm">Registrate</button>
+                           
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

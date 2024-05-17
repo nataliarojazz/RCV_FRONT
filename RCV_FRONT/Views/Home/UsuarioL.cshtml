@@ -1,0 +1,53 @@
+﻿@model List<Usuario>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">LISTA USUARIO</h1>
+</div>
+
+
+<div class="card-header">
+    Lista Usuario
+</div>
+<div class="card-body">
+
+    <a asp-action="Usuario" asp-controller="Home" asp-route-IdUsuario="0" class="btn btn-primary btn-sm">Nuevo Usuario</a>
+    <hr />
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Documento</th>
+                    <th>Telefono</th>
+                    <th>Clave</th>
+                    <th>Rol</th>
+
+                </tr>
+            </thead>
+            <tbody>
+         
+                    @foreach (var item in Model)
+                    {
+                        // Mostrar los detalles del usuario
+                        <tr>
+                            <td>@item.Nombre</td>
+                            <td>@item.Apellido</td>
+                            <td>@item.Documento</td>
+                            <td>@item.Telefono</td>
+                            <td>@item.Clave</td>
+                            <td>@item.Rol</td>
+                            <td>
+                                <a asp-action="Usuario" asp-controller="Home" asp-route-IdUsuario="@item.IdUsuario" class="btn btn-primary btn-sm">Editar</a>
+                                <a asp-action="EliminarU" asp-controller="Home" asp-route-IdUsuario="@item.IdUsuario" class="btn btn-danger btn-sm">Eliminar</a>
+                            </td>
+                        </tr>
+                    }
+               
+                
+            </tbody>
+        </table>
+    </div>
+

@@ -1,0 +1,68 @@
+﻿@model RCV_FRONT.Models.Usuario;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Inicio Sesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .center-image {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container mt-3 pt-3">
+        <img src="https://plataforma.ucundinamarca.edu.co/aplicaciones/CamposdeAprendizaje/assets/img/logo-udec.svg" alt="Logo Udec" width="300" height="200" class="center-image">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-4 col-md-6">
+
+                <div class="card">
+                    <div class="card-header">
+                        Iniciar Sesion
+                    </div>
+                    <div class="card-body">
+
+                        @if (!string.IsNullOrEmpty(ViewData["Mensaje"] as string))
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                @ViewData["Mensaje"]
+                            </div>
+                        }
+                        <form asp-action="IniciarSesion" asp-controller="Inicio" method="post">
+                            <input asp-for="IdUsuario" type="hidden" />
+
+                            <div class="mb-2">
+                                <label class="form-label">Documento</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Documento" />
+                            </div>
+                            <div class="mb-2">
+                                <label class="form-label">Contraseña</label>
+                                <input type="text" class="form-control form-control-sm" asp-for="Clave" />
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-sm">Iniciar Sesion</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

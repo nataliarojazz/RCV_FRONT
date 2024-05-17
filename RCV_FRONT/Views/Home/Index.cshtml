@@ -1,0 +1,58 @@
+﻿@model List<Vehiculo>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">LISTA VEHICULOS</h1>
+</div>
+
+<div class="card-header">
+    Lista Vehiculo
+</div>
+<div class="card-body">
+    <a asp-action="Vehiculo" asp-controller="Home" asp-route-IdVehiculo="0" class="btn btn-primary btn-sm">Nuevo Vehiculo</a>
+    <hr />
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Imagen U</th>
+                    <th>Imagen V</th>
+                    <th>ID Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <tr>
+                    <td><img src="https://acortar.link/ZAUlS6" alt="Imagen U" style="width: 100px; height: 100px;"></td>
+                    <td><img src="https://acortar.link/XxYADg" alt="Imagen V" style="width: 100px; height: 100px;"></td>
+                        <td>1</td>
+                        <td>
+                            <a asp-action="Vehiculo" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="EliminarV" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+                <tr>
+                    <td><img src="https://acortar.link/k9X361" alt="Imagen U" style="width: 100px; height: 100px;"></td>
+                    <td><img src="https://acortar.link/zej0Bh" alt="Imagen V" style="width: 100px; height: 100px;"></td>
+                    <td>2</td>
+                    <td>
+                        <a asp-action="Vehiculo" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="EliminarV" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="https://acortar.link/5aYeGd" alt="Imagen U" style="width: 100px; height: 100px;"></td>
+                    <td><img src="https://acortar.link/oAPdtf" alt="Imagen V" style="width: 100px; height: 100px;"></td>
+                    <td>3</td>
+                    <td>
+                        <a asp-action="Vehiculo" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-primary btn-sm">Editar</a>
+                        <a asp-action="EliminarV" asp-controller="Home" asp-route-IdVehiculo="1" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</div>

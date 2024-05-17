@@ -1,0 +1,31 @@
+﻿@model Vehiculo
+@{
+    ViewData["Title"] = "Vehiculo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-header">
+    @ViewBag.Accion
+</div>
+<div class="card-body">
+        <form asp-action="GuardarV" asp-controller="Home" method="post">
+            <input asp-for="IdVehiculo" type="hidden"/>
+            <div class="mb-2">
+                <label class="form-label">Imagen Usuario</label>
+                <input type="text" class="form-control form-control-sm" asp-for="ImagenU"/>
+            </div>
+             <div class="mb-2">
+                <label class="form-label">Imagen Vehiculo</label>
+                <input type="text" class="form-control form-control-sm" asp-for="ImagenV"/>
+            </div>
+        <div class="mb-2">
+            <label class="form-label">Usuario</label>
+            <input type="text" class="form-control form-control-sm" asp-for="IdUsuario" />
+        </div>
+
+        <button type="submit" class="btn btn-success btn-sm">Guardar Cambios</button>
+        <a asp-action="Index" asp-controller="Home"  class="btn btn-warning btn-sm">Volver a la lista</a>
+
+    </form>
+    
+    </div>
